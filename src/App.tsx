@@ -1,4 +1,3 @@
-import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
 import Todo from "./pages/todo";
@@ -6,8 +5,8 @@ import Home from "./pages/home";
 import Sobre from "./pages/sobre";
 import { ContextoTema } from "./context/contextTema";
 import { ContextoTodo } from "./context/contextTodo";
-//import { FirebaseContext } from './context/contextFirebase';
-//import { db, auth } from './firebaseConfig'
+import { FirebaseContext } from './context/contextFirebase';
+import { db, auth } from './firebaseConfig'
 
 function App() {
   const renderizarBotoes = () => (
@@ -24,7 +23,7 @@ function App() {
 
   return (
     <ContextoTema.Provider value='dark'>
-      {/* <FirebaseContext.Provider value={{ db, auth }}> */}
+      <FirebaseContext.Provider value={{ db, auth }}>
         <Router>
           {renderizarBotoes()}
           <Routes>
@@ -37,7 +36,7 @@ function App() {
             <Route path="/sobre" element={<Sobre />} />
           </Routes>
         </Router>
-      {/* </FirebaseContext.Provider> */}
+      </FirebaseContext.Provider>
     </ContextoTema.Provider>
   );
 }
