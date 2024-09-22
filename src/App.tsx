@@ -4,11 +4,16 @@ import Todo from "./pages/todo";
 import Home from "./pages/home";
 import Sobre from "./pages/sobre";
 import { ContextoTema } from "./context/contextTema";
-import { ContextoTodo } from "./context/contextTodo";
+import { ContextTodo } from "./context/contextTodo";
 import { FirebaseContext } from './context/contextFirebase';
 import { db, auth } from './firebaseConfig'
+import { TodoService } from "./utils/TodoService";
+import { Api } from "./utils/api/api";
 
 function App() {
+  const api: Api = new Api(db, auth)
+
+  const todoService = new TodoService()
   const renderizarBotoes = () => (
     <div className="App">
         <nav>
@@ -23,15 +28,15 @@ function App() {
 
   return (
     <ContextoTema.Provider value='dark'>
-      <FirebaseContext.Provider value={{ db, auth }}>
+      <FirebaseContext.Provider value={{ api }}>
         <Router>
           {renderizarBotoes()}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/todo" element={
-              <ContextoTodo.Provider value={[]}>
+              <ContextTodo.Provider value={{ todoService }}>
                 <Todo />
-              </ContextoTodo.Provider>
+              </ContextTodo.Provider>
             } />
             <Route path="/sobre" element={<Sobre />} />
           </Routes>
