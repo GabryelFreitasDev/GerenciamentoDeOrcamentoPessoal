@@ -1,0 +1,148 @@
+/* transaction.css */
+
+.transaction-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f4f4f9;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+button {
+  padding: 12px 20px;
+  margin: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ddd;
+}
+
+input {
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.transaction-list {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.transaction {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  transition: transform 0.2s ease;
+}
+
+.transaction:hover {
+  transform: translateY(-5px);
+}
+
+.receita {
+  background-color: #e0ffe0;
+  border-left: 5px solid #28a745;
+  color: #28a745;
+}
+
+.despesa {
+  background-color: #ffe0e0;
+  border-left: 5px solid #dc3545;
+  color: #dc3545;
+}
+
+.valor-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 400px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.valor-input-container h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.valor-input-container label {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 5px;
+  align-self: flex-start;
+}
+
+.valor-input-container input {
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+.valor-input-container input:focus {
+  border-color: #007bff;
+}
+
+.valor-input-container .buttons-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.valor-input-container button {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 48%;
+}
+
+.valor-input-container button.salvar {
+  background-color: #28a745;
+  color: white;
+}
+
+.valor-input-container button.salvar:hover {
+  background-color: #218838;
+}
+
+.valor-input-container button.cancelar {
+  background-color: #dc3545;
+  color: white;
+}
+
+.valor-input-container button.cancelar:hover {
+  background-color: #c82333;
+}
